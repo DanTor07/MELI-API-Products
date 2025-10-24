@@ -1,0 +1,28 @@
+# --- Entornos locales ---
+.venv
+venv
+__pycache__
+.env
+.env.local
+
+# --- Configs locales ---
+.vscode
+.idea
+.DS_Store
+Thumbs.db
+
+# --- Archivos de Git ---
+.git
+.gitignore
+
+# --- Tests y cachés ---
+.pytest_cache
+coverage/
+htmlcov/
+*.log
+
+# --- Archivos temporales ---
+*.tar
+*.zip
+*.tmp
+*.bak
