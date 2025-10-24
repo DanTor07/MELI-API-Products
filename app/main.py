@@ -66,8 +66,11 @@ def list_products(
     limit: int = Query(20, ge=1, le=100),
     offset: int = Query(0, ge=0)
 ):
-    return service.list_products(q, min_price, max_price, min_rating, sort_by, order, limit, offset)
-
+    try:
+        return service.list_products(q, min_price, max_price, min_rating, sort_by, order, limit, offset)
+    except Exception as e:
+        from app.errors import ApiError
+        raise ApiError.internal(f"Error interno del servidor: {e}")
 
 @app.get("/api/products/{product_id}", response_model=ProductOut)
 def get_product(product_id: str):

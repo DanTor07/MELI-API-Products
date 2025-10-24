@@ -91,8 +91,7 @@ def test_invalid_price_validation():
     assert res.status_code == 422
     data = res.json()
     assert data["error"]["type"] == "validation_error"
-    assert "details" in data
-
+    assert "details" in data["error"]
 
 def test_internal_server_error(monkeypatch):
     """Simula un error inesperado y verifica respuesta 500"""

@@ -172,7 +172,7 @@ app/
 **Ejecución de tests:**
 
 ```bash
-   pytest -v
+   python -m pytest -v
 ```
 ### Cobertura:
 
