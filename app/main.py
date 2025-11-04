@@ -33,6 +33,7 @@ async def handle_api_error(request, exc: ApiError):
 
 @app.exception_handler(RequestValidationError)
 async def handle_validation_error(request, exc: RequestValidationError):
+    print(f"Validation error: {request.method}-->{request.body} ")
     details = exc.errors()
     err = ApiError.validation("Error de validación en los parámetros de entrada", details)
     return JSONResponse(status_code=422, content=api_error_response(err))
@@ -61,9 +62,9 @@ def list_products(
     min_price: float | None = Query(None, ge=0),
     max_price: float | None = Query(None, ge=0),
     min_rating: float | None = Query(None, ge=0, le=5),
-    sort_by: str | None = Query(None, pattern="^(name|price|rating)$"),
+    sort_by: str | None = Query(None, pattern="^(product_name|price|rating)$"),
     order: str = Query("asc", pattern="^(asc|desc)$"),
-    limit: int = Query(20, ge=1, le=100),
+    limit: int = Query(10, ge=1, le=20),
     offset: int = Query(0, ge=0)
 ):
     try:
