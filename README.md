@@ -2,6 +2,8 @@
 API RESTful desarrollada en **FastAPI**, siguiendo una **arquitectura monolítica modular de 3 capas**.  
 Permite listar, filtrar y comparar productos desde un dataset local (sin base de datos), con control de errores integral y despliegue containerizado.
 
+### Enlace repositorio 
+- **https://github.com/DanTor07/MELI-API-Products**
 ---
 
 # 🧱 Arquitectura del Proyecto
@@ -23,7 +25,6 @@ app/
 - **Control de errores centralizado:** todos los fallos se devuelven en formato uniforme JSON.  
 - **Pruebas automatizadas:** validan la lógica de negocio, errores y flujos HTTP completos.  
 - **Contenedorización total:** Docker y Docker Compose permiten ejecución reproducible en cualquier entorno.
-
 ---
 
 ## ⚙️ Pila Tecnológica
@@ -201,4 +202,3 @@ El desarrollo fue asistido con herramientas de **IA generativa** como **ChatGPT*
 ## 👨‍💻 Autor
 
 ### Daniel Torres
-
